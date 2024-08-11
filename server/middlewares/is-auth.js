@@ -15,7 +15,6 @@ module.exports = function (req, res, next) {
       User.findOne({ _id: user._id })
         .then(user => {
           req.user = user;
-
           next();
         })
         .catch(err => console.log(err));

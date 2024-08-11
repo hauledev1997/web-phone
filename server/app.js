@@ -45,11 +45,11 @@ app.use(express.json({ type: ['application/json'] }));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // const accessLogStream = fs.createWriteStream("/tmp/access.log");
-
+    
 app.use(helmet.crossOriginResourcePolicy({ policy: 'cross-origin' }));
 app.use(compression());
 // app.use(morgan("combined", { stream: accessLogStream }));
-
+ 
 app.use(
   multer({ storage: fileStorage, fileFilter: fileFilter }).array('images')
 );
